@@ -423,6 +423,7 @@
   width: var(--sidebar-width);
   box-sizing: border-box;
   padding: 20px;
+  padding-top: 0px;
   background-color: var(--second);
   display: flex;
   flex-direction: column;
@@ -515,6 +516,7 @@
   font-size: 20px;
   font-weight: bold;
   animation: home_slide-in__h1Bn_ ease 0.3s;
+  text-align: center;
 }
 
 .home_sidebar-sub-title__sbT6Z {

@@ -7,12 +7,12 @@ import SettingsIcon from "../icons/settings.svg";
 import GithubIcon from "../icons/github.svg";
 import ChatGptIcon from "../icons/chatgpt.svg";
 import AddIcon from "../icons/add.svg";
+import Logo from "../icons/logo_utc.png";
 import CloseIcon from "../icons/close.svg";
 import DeleteIcon from "../icons/delete.svg";
 import MaskIcon from "../icons/mask.svg";
 import PluginIcon from "../icons/plugin.svg";
 import DragIcon from "../icons/drag.svg";
-
 import Locale from "../locales";
 
 import { useAppConfig, useChatStore } from "../store";
@@ -155,16 +155,28 @@ export function SideBar(props: { className?: string }) {
     >
       <div className={styles["sidebar-header"]} data-tauri-drag-region>
         <div className={styles["sidebar-title"]} data-tauri-drag-region>
-          ChatGPT Next
+            <img src={Logo.src} width={40} height={40} alt="logoUtcPic" />
         </div>
-        <div className={styles["sidebar-sub-title"]}>
-          Build your own AI assistant.
+        <div>
+          <IconButton
+            icon={<AddIcon />}
+            text={shouldNarrow ? undefined : Locale.Home.NewChat}
+            onClick={() => {
+              if (config.dontShowMaskSplashScreen) {
+                chatStore.newSession();
+                navigate(Path.Chat);
+              } else {
+                navigate(Path.NewChat);
+              }
+            }}
+            shadow
+          />
         </div>
-        <div className={styles["sidebar-logo"] + " no-dark"}>
+        {/* <div className={styles["sidebar-logo"] + " no-dark"}>
           <ChatGptIcon />
-        </div>
+        </div> */}
       </div>
-
+{/* 
       <div className={styles["sidebar-header-bar"]}>
         <IconButton
           icon={<MaskIcon />}
@@ -186,7 +198,7 @@ export function SideBar(props: { className?: string }) {
           onClick={() => showToast(Locale.WIP)}
           shadow
         />
-      </div>
+      </div> */}
 
       <div
         className={styles["sidebar-body"]}
@@ -212,17 +224,17 @@ export function SideBar(props: { className?: string }) {
             />
           </div>
           <div className={styles["sidebar-action"]}>
+            <a  target="_blank" rel="noopener noreferrer">
+              <IconButton icon={<GithubIcon />} shadow />
+            </a>
+          </div>
+          <div className={styles["sidebar-action"]}>
             <Link to={Path.Settings}>
               <IconButton icon={<SettingsIcon />} shadow />
             </Link>
           </div>
-          <div className={styles["sidebar-action"]}>
-            <a href={REPO_URL} target="_blank" rel="noopener noreferrer">
-              <IconButton icon={<GithubIcon />} shadow />
-            </a>
-          </div>
         </div>
-        <div>
+        {/* <div>
           <IconButton
             icon={<AddIcon />}
             text={shouldNarrow ? undefined : Locale.Home.NewChat}
@@ -236,15 +248,15 @@ export function SideBar(props: { className?: string }) {
             }}
             shadow
           />
-        </div>
+        </div> */}
       </div>
 
-      <div
+      {/* <div
         className={styles["sidebar-drag"]}
         onPointerDown={(e) => onDragStart(e as any)}
       >
         <DragIcon />
-      </div>
+      </div> */}
     </div>
   );
 }

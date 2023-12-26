@@ -1050,7 +1050,7 @@ function _Chat() {
 
   return (
     <div className={styles.chat} key={session.id}>
-      <div className="window-header" data-tauri-drag-region>
+      {/* <div className="window-header" data-tauri-drag-region>
         {isMobileScreen && (
           <div className="window-actions">
             <div className={"window-action-button"}>
@@ -1116,7 +1116,7 @@ function _Chat() {
           showModal={showPromptModal}
           setShowModal={setShowPromptModal}
         />
-      </div>
+      </div> */}
 
       <div
         className={styles["chat-body"]}
@@ -1139,8 +1139,6 @@ function _Chat() {
           const showTyping = message.preview || message.streaming;
           const shouldShowClearContextDivider = i === clearContextIndex - 1;
 
-
-          console.log('message',message);
           return (
             <Fragment key={message.id}>
               <div
@@ -1264,8 +1262,8 @@ function _Chat() {
       </div>
 
       <div className={styles["chat-input-panel"]}>
-        <PromptHints prompts={promptHints} onPromptSelect={onPromptSelect} />
-
+        {/* <PromptHints prompts={promptHints} onPromptSelect={onPromptSelect} /> */}
+{/* 
         <ChatActions
           showPromptModal={() => setShowPromptModal(true)}
           scrollToBottom={scrollToBottom}
@@ -1280,7 +1278,7 @@ function _Chat() {
             setUserInput("/");
             onSearch("");
           }}
-        />
+        /> */}
         <div className={styles["chat-input-panel-inner"]}>
           <textarea
             ref={inputRef}

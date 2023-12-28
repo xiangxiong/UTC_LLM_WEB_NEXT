@@ -9,6 +9,7 @@ import ChatGptIcon from "../icons/chatgpt.svg";
 import AddIcon from "../icons/add.svg";
 import Logo from "../icons/logo_utc.png";
 import CloseIcon from "../icons/close.svg";
+import Exit from "../icons/exit.svg";
 import DeleteIcon from "../icons/delete.svg";
 import MaskIcon from "../icons/mask.svg";
 import PluginIcon from "../icons/plugin.svg";
@@ -143,6 +144,11 @@ export function SideBar(props: { className?: string }) {
 
   useHotKey();
 
+  const onExit = () => {
+      navigate(Path.Login);
+  };
+
+
   return (
     <div
       className={`${styles.sidebar} ${props.className} ${
@@ -224,8 +230,8 @@ export function SideBar(props: { className?: string }) {
             />
           </div>
           <div className={styles["sidebar-action"]}>
-            <a  target="_blank" rel="noopener noreferrer">
-              <IconButton icon={<GithubIcon />} shadow />
+            <a onClick={onExit}  rel="noopener noreferrer">
+              <IconButton icon={<Exit />} shadow />
             </a>
           </div>
           <div className={styles["sidebar-action"]}>

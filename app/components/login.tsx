@@ -2,21 +2,22 @@ import styles from "./login.module.scss";
 import Logo from "../icons/logo_utc.png";
 import { Tabs,Button, Checkbox, Form, Input,InputNumber } from 'antd';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { Path } from "../constant";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
+    const navigate = useNavigate();
 
     const onFinish = (values: any) => {
         console.log('Received values of form: ', values);
-      };
-
-
+        navigate(Path.Chat);
+    };
 
     const renderRegister = () => {
         return (
             <Form
               name="normal_login"
               className="login-form"
-              initialValues={{ remember: true }}
               onFinish={onFinish}
             >
               <Form.Item
@@ -26,16 +27,16 @@ export const Login = () => {
                 <Input placeholder="手机号" prefix={"+86"}/>
               </Form.Item>
               <Form.Item
-                name="password"
-                rules={[{ required: true, message: '请输入验证码' }]}>
+                name="pwd"
+                rules={[{ required: true,message: '请输入验证码' }]}>
                 <Input
                   prefix={<LockOutlined className="site-form-item-icon" />}
                   placeholder="验证码"
                 />
-                <a id="startButton" onClick={startCountdown} className={styles['login-form-validate']}>
+              </Form.Item>
+              <a id="startButton" onClick={startCountdown} className={styles['login-form-validate']}>
                   获取验证码
                 </a>
-              </Form.Item>
               <Form.Item className="login-form-container">
                 <Button type="primary" htmlType="submit" style={{width:'100%'}} className="login-form-button">
                   登 录

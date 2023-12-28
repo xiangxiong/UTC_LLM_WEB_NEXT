@@ -1,5 +1,28 @@
 @import "../styles/animation.scss";
 
+.motai{
+  position: relative;
+  top: 72px;
+  left: 30px;
+  width: 30px;
+  height: 25px;
+  border: 1px solid #24292f;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.ant-upload-wrapper .ant-upload-list .ant-upload-list-item {
+  position: relative;
+  top: -52px;
+  left: 20px;
+  /* height: 22px; */
+  /* margin-top: 8px; */
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s;
+}
 
 .chat-input-actions {
   display: flex;
@@ -488,7 +511,7 @@
   background-color: var(--white);
   color: var(--black);
   font-family: inherit;
-  padding: 10px 90px 10px 14px;
+  padding: 10px 90px 10px 47px;
   resize: none;
   outline: none;
   box-sizing: border-box;

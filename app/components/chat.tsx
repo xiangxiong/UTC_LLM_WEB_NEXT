@@ -34,6 +34,9 @@ import AutoIcon from "../icons/auto.svg";
 import BottomIcon from "../icons/bottom.svg";
 import StopIcon from "../icons/pause.svg";
 import RobotIcon from "../icons/robot.svg";
+import Motai from "../icons/motai.svg";
+
+
 
 import {
   ChatMessage,
@@ -89,6 +92,8 @@ import { prettyObject } from "../utils/format";
 import { ExportMessageModal } from "./exporter";
 import { getClientConfig } from "../config/client";
 import { useAllModels } from "../utils/hooks";
+import type { UploadProps } from 'antd';
+import { Button, message, Upload } from 'antd';
 
 const Markdown = dynamic(async () => (await import("./markdown")).Markdown, {
   loading: () => <LoadingIcon />,
@@ -1048,9 +1053,27 @@ function _Chat() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const props: UploadProps = {
+    name: 'file',
+    action: 'https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188',
+    headers: {
+      authorization: 'authorization-text',
+    },
+    onChange(info) {
+      if (info.file.status !== 'uploading') {
+        console.log(info.file, info.fileList);
+      }
+      if (info.file.status === 'done') {
+        message.success(`${info.file.name} file uploaded successfully`);
+      } else if (info.file.status === 'error') {
+        message.error(`${info.file.name} file upload failed.`);
+      }
+    },
+  };
+
   return (
     <div className={styles.chat} key={session.id}>
-      {/* <div className="window-header" data-tauri-drag-region>
+      <div className="window-header" data-tauri-drag-region>
         {isMobileScreen && (
           <div className="window-actions">
             <div className={"window-action-button"}>
@@ -1077,7 +1100,7 @@ function _Chat() {
         </div>
 
         <div className="window-actions">
-          {!isMobileScreen && (
+          {/* {!isMobileScreen && (
             <div className="window-action-button">
               <IconButton
                 icon={<RenameIcon />}
@@ -1095,7 +1118,7 @@ function _Chat() {
                 setShowExport(true);
               }}
             />
-          </div>
+          </div> */}
           {showMaxIcon && (
             <div className="window-action-button">
               <IconButton
@@ -1116,7 +1139,7 @@ function _Chat() {
           showModal={showPromptModal}
           setShowModal={setShowPromptModal}
         />
-      </div> */}
+      </div>
 
       <div
         className={styles["chat-body"]}
@@ -1248,11 +1271,11 @@ function _Chat() {
                     />
                   </div>
 
-                  <div className={styles["chat-message-action-date"]}>
+                  {/* <div className={styles["chat-message-action-date"]}>
                     {isContext
                       ? Locale.Chat.IsContext
                       : message.date.toLocaleString()}
-                  </div>
+                  </div> */}
                 </div>
               </div>
               {shouldShowClearContextDivider && <ClearContextDivider />}
@@ -1261,6 +1284,10 @@ function _Chat() {
         })}
       </div>
 
+      <Upload {...props}>
+               <Motai width="30px" className={styles['motai']}/>
+        </Upload>
+        
       <div className={styles["chat-input-panel"]}>
         {/* <PromptHints prompts={promptHints} onPromptSelect={onPromptSelect} /> */}
 {/* 

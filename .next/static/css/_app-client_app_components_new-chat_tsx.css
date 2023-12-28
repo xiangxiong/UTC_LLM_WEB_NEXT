@@ -36,6 +36,30 @@
     transform: translateY(0px);
   }
 }
+.chat_motai__Kqdo6 {
+  position: relative;
+  top: 72px;
+  left: 30px;
+  width: 30px;
+  height: 25px;
+  border: 1px solid #24292f;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.chat_ant-upload-wrapper___ZZ3T .chat_ant-upload-list__SMxGX .chat_ant-upload-list-item__57fXp {
+  position: relative;
+  top: -52px;
+  left: 20px;
+  /* height: 22px; */
+  /* margin-top: 8px; */
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
 .chat_chat-input-actions__mwYC_ {
   display: flex;
   flex-wrap: wrap;
@@ -460,7 +484,7 @@
   background-color: var(--white);
   color: var(--black);
   font-family: inherit;
-  padding: 10px 90px 10px 14px;
+  padding: 10px 90px 10px 47px;
   resize: none;
   outline: none;
   box-sizing: border-box;

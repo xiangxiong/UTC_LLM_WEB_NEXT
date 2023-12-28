@@ -3,9 +3,7 @@
 require("../polyfill");
 
 import { useState, useEffect } from "react";
-
 import styles from "./home.module.scss";
-
 import BotIcon from "../icons/bot.svg";
 import LoadingIcon from "../icons/three-dots.svg";
 
@@ -14,8 +12,8 @@ import { getCSSVar, useMobileScreen } from "../utils";
 import dynamic from "next/dynamic";
 import { Path, SlotID } from "../constant";
 import { ErrorBoundary } from "./error";
-
 import { getISOLang, getLang } from "../locales";
+import {Login} from './login';
 
 import {
   HashRouter as Router,
@@ -127,12 +125,34 @@ function Screen() {
   const location = useLocation();
   const isHome = location.pathname === Path.Home;
   const isAuth = location.pathname === Path.Auth;
+  const isLogin = location.pathname === Path.Login;
   const isMobileScreen = useMobileScreen();
   const shouldTightBorder = getClientConfig()?.isApp || (config.tightBorder && !isMobileScreen);
 
   useEffect(() => {
     loadAsyncGoogleFont();
   }, []);
+
+  const RenderHtml = () => {
+
+    if(isAuth) return  <AuthPage />
+
+    if(isLogin) return <Login/>
+
+    return <>
+         <SideBar className={isHome ? styles["sidebar-show"] : ""} />
+        <div className={styles["window-content"]} id={SlotID.AppBody}>
+          <Routes>
+            <Route path={Path.Home} element={<Chat />} />
+            <Route path={Path.Login} element={<Login />} />
+            <Route path={Path.NewChat} element={<NewChat />} />
+            <Route path={Path.Masks} element={<MaskPage />} />
+            <Route path={Path.Chat} element={<Chat />} />
+            <Route path={Path.Settings} element={<Settings />} />
+          </Routes>
+        </div>
+    </>
+  }
 
   return (
     <div
@@ -141,27 +161,8 @@ function Screen() {
         ` ${shouldTightBorder ? styles["tight-container"] : styles.container} ${
           getLang() === "ar" ? styles["rtl-screen"] : ""
         }`
-      }
-    >
-      {isAuth ? (
-        <>
-          <AuthPage />
-        </>
-      ) : (
-        <>
-          <SideBar className={isHome ? styles["sidebar-show"] : ""} />
-
-          <div className={styles["window-content"]} id={SlotID.AppBody}>
-            <Routes>
-              <Route path={Path.Home} element={<Chat />} />
-              <Route path={Path.NewChat} element={<NewChat />} />
-              <Route path={Path.Masks} element={<MaskPage />} />
-              <Route path={Path.Chat} element={<Chat />} />
-              <Route path={Path.Settings} element={<Settings />} />
-            </Routes>
-          </div>
-        </>
-      )}
+      }>
+      {RenderHtml()}
     </div>
   );
 }

@@ -139,22 +139,6 @@
       ],
       "async": false
     },
-    "/Users/github/gpt/UTC_LLM_WEB_NEXT/node_modules/@vercel/analytics/dist/react/index.js": {
-      "id": "(app-client)/./node_modules/@vercel/analytics/dist/react/index.js",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/Users/github/gpt/UTC_LLM_WEB_NEXT/app/components/home.tsx": {
-      "id": "(app-client)/./app/components/home.tsx",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
     "/Users/github/gpt/UTC_LLM_WEB_NEXT/app/styles/globals.scss": {
       "id": "(app-client)/./app/styles/globals.scss",
       "name": "*",
@@ -178,14 +162,30 @@
         "app/layout:static/chunks/app/layout.js"
       ],
       "async": false
+    },
+    "/Users/github/gpt/UTC_LLM_WEB_NEXT/node_modules/@vercel/analytics/dist/react/index.js": {
+      "id": "(app-client)/./node_modules/@vercel/analytics/dist/react/index.js",
+      "name": "*",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
+    "/Users/github/gpt/UTC_LLM_WEB_NEXT/app/components/home.tsx": {
+      "id": "(app-client)/./app/components/home.tsx",
+      "name": "*",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
     }
   },
   "entryCSSFiles": {
-    "/Users/github/gpt/UTC_LLM_WEB_NEXT/app/page": [
-      "static/css/app/page.css"
-    ],
     "/Users/github/gpt/UTC_LLM_WEB_NEXT/app/layout": [
       "static/css/app/layout.css"
+    ],
+    "/Users/github/gpt/UTC_LLM_WEB_NEXT/app/page": [
+      "static/css/app/page.css"
     ]
   }
 }

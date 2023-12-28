@@ -199,6 +199,13 @@ function useSubmitHandler() {
   const isComposing = useRef(false);
 
   useEffect(() => {
+
+    for (var i = 1; i <= 5; i++){
+      setTimeout(function timer() {
+        console.log(i)
+      }, 0);
+    }
+
     const onCompositionStart = () => {
       isComposing.current = true;
     };
@@ -1287,7 +1294,7 @@ function _Chat() {
       <Upload {...props}>
                <Motai width="30px" className={styles['motai']}/>
         </Upload>
-        
+
       <div className={styles["chat-input-panel"]}>
         {/* <PromptHints prompts={promptHints} onPromptSelect={onPromptSelect} /> */}
 {/* 

@@ -7,7 +7,6 @@ import React, {
   useCallback,
   Fragment,
 } from "react";
-
 import SendWhiteIcon from "../icons/send-white.svg";
 import BrainIcon from "../icons/brain.svg";
 import RenameIcon from "../icons/rename.svg";
@@ -27,7 +26,6 @@ import PinIcon from "../icons/pin.svg";
 import EditIcon from "../icons/rename.svg";
 import ConfirmIcon from "../icons/confirm.svg";
 import CancelIcon from "../icons/cancel.svg";
-
 import LightIcon from "../icons/light.svg";
 import DarkIcon from "../icons/dark.svg";
 import AutoIcon from "../icons/auto.svg";
@@ -35,9 +33,6 @@ import BottomIcon from "../icons/bottom.svg";
 import StopIcon from "../icons/pause.svg";
 import RobotIcon from "../icons/robot.svg";
 import Motai from "../icons/motai.svg";
-
-
-
 import {
   ChatMessage,
   SubmitKey,
@@ -1158,8 +1153,67 @@ function _Chat() {
           setAutoScroll(false);
         }}
       >
+        <>
+            <h2 className={styles["prompt-wrapper-title"]}>Ask a question to get started.</h2>
+            <h3 className={styles["prompt-wrapper-subtitle"]}>Example Prompts</h3>
+            <div className={styles["prompt-wrapper"]}>
+              <div className={styles["prompt-card"]}>
+                <div className={styles["prompt-card-title"]}>
+                    <img src="https://www.stratosphere.io/assets/images/search/logos/ADBE.svg"/>
+                </div>
+                <div> Provide an overview of Microsoft's business fundamentals.</div>
+              </div>
+              <div className={styles["prompt-card"]}>
+                <div className={styles["prompt-card-title"]}>
+                    <img src="https://www.stratosphere.io/assets/images/search/logos/ADBE.svg"/>
+                </div>
+                <div> Provide an overview of Microsoft's business fundamentals.</div>
+              </div>
+              <div className={styles["prompt-card"]}>
+                <div className={styles["prompt-card-title"]}>
+                    <img src="https://www.stratosphere.io/assets/images/search/logos/ADBE.svg"/>
+                </div>
+                <div> Provide an overview of Microsoft's business fundamentals.</div>
+              </div>
+              <div className={styles["prompt-card"]}>
+                <div className={styles["prompt-card-title"]}>
+                    <img src="https://www.stratosphere.io/assets/images/search/logos/ADBE.svg"/>
+                </div>
+                <div> Provide an overview of Microsoft's business fundamentals.</div>
+              </div>
+              <div className={styles["prompt-card"]}>
+                <div className={styles["prompt-card-title"]}>
+                    <img src="https://www.stratosphere.io/assets/images/search/logos/ADBE.svg"/>
+                </div>
+                <div> Provide an overview of Microsoft's business fundamentals.</div>
+              </div>
+              <div className={styles["prompt-card"]}>
+                <div className={styles["prompt-card-title"]}>
+                    <img src="https://www.stratosphere.io/assets/images/search/logos/ADBE.svg"/>
+                </div>
+                <div> Provide an overview of Microsoft's business fundamentals.</div>
+              </div>
+              <div className={styles["prompt-card"]}>
+                <div className={styles["prompt-card-title"]}>
+                    <img src="https://www.stratosphere.io/assets/images/search/logos/ADBE.svg"/>
+                </div>
+                <div> Provide an overview of Microsoft's business fundamentals.</div>
+              </div>
+              <div className={styles["prompt-card"]}>
+                <div className={styles["prompt-card-title"]}>
+                    <img src="https://www.stratosphere.io/assets/images/search/logos/ADBE.svg"/>
+                </div>
+                <div> Provide an overview of Microsoft's business fundamentals.</div>
+              </div>
+              <div className={styles["prompt-card"]}>
+                <div className={styles["prompt-card-title"]}>
+                    <img src="https://www.stratosphere.io/assets/images/search/logos/ADBE.svg"/>
+                </div>
+                <div> Provide an overview of Microsoft's business fundamentals.</div>
+              </div>
+            </div>
+        </>
         {messages.map((message, i) => {
-          
           const isUser = message.role === "user";
           const isContext = i < context.length;
           const showActions =
@@ -1175,6 +1229,8 @@ function _Chat() {
                 className={isUser ? styles["chat-message-user"] : styles["chat-message"]}
               >
                 <div className={styles["chat-message-container"]}>
+          
+{/* 
                   <div className={styles["chat-message-header"]}>
                     <div className={styles["chat-message-avatar"]}>
                       <div className={styles["chat-message-edit"]}>
@@ -1253,8 +1309,9 @@ function _Chat() {
                         </div>
                       </div>
                     )}
-                  </div>
-                  {showTyping && (
+                  </div> */}
+
+                  {/* {showTyping && (
                     <div className={styles["chat-message-status"]}>
                       {Locale.Chat.Typing}
                     </div>
@@ -1277,8 +1334,7 @@ function _Chat() {
                       defaultShow={i >= messages.length - 6}
                     />
                   </div>
-
-                  {/* <div className={styles["chat-message-action-date"]}>
+                  <div className={styles["chat-message-action-date"]}>
                     {isContext
                       ? Locale.Chat.IsContext
                       : message.date.toLocaleString()}
@@ -1297,7 +1353,7 @@ function _Chat() {
 
       <div className={styles["chat-input-panel"]}>
         {/* <PromptHints prompts={promptHints} onPromptSelect={onPromptSelect} /> */}
-{/* 
+        {/* 
         <ChatActions
           showPromptModal={() => setShowPromptModal(true)}
           scrollToBottom={scrollToBottom}

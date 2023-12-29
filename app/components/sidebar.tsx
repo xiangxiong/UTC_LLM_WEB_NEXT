@@ -10,12 +10,13 @@ import AddIcon from "../icons/add.svg";
 import Logo from "../icons/logo_utc.png";
 import CloseIcon from "../icons/close.svg";
 import Exit from "../icons/exit.svg";
+import Search from "../icons/search.svg";
 import DeleteIcon from "../icons/delete.svg";
 import MaskIcon from "../icons/mask.svg";
 import PluginIcon from "../icons/plugin.svg";
 import DragIcon from "../icons/drag.svg";
 import Locale from "../locales";
-
+import { Input, Space } from 'antd';
 import { useAppConfig, useChatStore } from "../store";
 
 import {
@@ -179,9 +180,6 @@ export function SideBar(props: { className?: string }) {
             shadow
           />
         </div>
-        {/* <div className={styles["sidebar-logo"] + " no-dark"}>
-          <ChatGptIcon />
-        </div> */}
       </div>
 {/* 
       <div className={styles["sidebar-header-bar"]}>
@@ -206,7 +204,10 @@ export function SideBar(props: { className?: string }) {
           shadow
         />
       </div> */}
-
+      <div className={styles['search-block']}>
+          <input placeholder="Search chats" className={styles['search']}/>
+         <IconButton className={styles['search-icon']} icon={ <Search/>} shadow />
+      </div>
       <div
         className={styles["sidebar-body"]}
         onClick={(e) => {

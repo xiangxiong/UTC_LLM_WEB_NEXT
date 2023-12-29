@@ -461,8 +461,23 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.home_search__8rZR_ {
+  border: 1px solid rgb(129, 129, 129);
+  height: 38px;
+  width: 85%;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding-left: 30px;
+}
+
 .home_add-icon__ZcPhu {
   font-size: 16px !important;
+}
+
+.home_search-icon__4s2Ix {
+  position: relative;
+  left: 2px;
+  bottom: 40px;
 }
 
 .home_container__4PEJZ {
@@ -592,7 +607,10 @@
 .home_sidebar-header___NHg_ {
   position: relative;
   padding-top: 20px;
-  padding-bottom: 20px;
+}
+
+.home_search-block___8UQ9 {
+  height: 64px;
 }
 
 .home_sidebar-logo__Cd7hL {

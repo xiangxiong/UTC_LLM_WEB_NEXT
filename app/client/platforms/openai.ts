@@ -31,7 +31,6 @@ export class ChatGPTApi implements LLMApi {
   private disableListModels = true;
 
   path(path: string): string {
-    debugger;
     const accessStore = useAccessStore.getState();
 
     const isAzure = accessStore.provider === ServiceProvider.Azure;
@@ -99,8 +98,6 @@ export class ChatGPTApi implements LLMApi {
     const controller = new AbortController();
     options.onController?.(controller);
 
-
-    debugger;
     try {
       const chatPath = this.path(OpenaiPath.ChatPath);
       const chatPayload = {

@@ -540,3 +540,58 @@
     bottom: 30px;
   }
 }
+
+.prompt-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin: 0 auto;
+  width: 980px;
+  align-items: center;
+}
+
+.prompt-wrapper-title{
+  color: #131313;
+  font-size: 30px;
+  line-height: 60px;
+  text-align: center;
+  margin-top: 100px;
+  font-weight: 700;
+}
+
+.prompt-wrapper-subtitle{
+  color: #131313;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.prompt-card{
+  width: 280px;
+  height: 115px;
+  background: #EFEFEF;
+  padding: 16px 12px;
+  border-radius: 5px;
+  margin: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.prompt-card-title{
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.prompt-card-title>img{
+  width: 30px;
+  height: 30px;
+  min-height: 30px;
+  min-width: 30px;
+  border-radius: 5px;
+}

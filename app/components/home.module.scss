@@ -13,9 +13,25 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.search{
+  border: 1px solid rgb(129, 129, 129);
+  height: 38px;
+  width: 85%;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding-left: 30px;
+}
+
 .add-icon{
   font-size: 16px !important;
 }
+
+.search-icon{
+  position: relative;
+  left: 2px;
+  bottom: 40px;
+}
+
 
 @mixin container {
   background-color: var(--white);
@@ -155,7 +171,11 @@
 .sidebar-header {
   position: relative;
   padding-top: 20px;
-  padding-bottom: 20px;
+  // padding-bottom: 20px;
+}
+
+.search-block{
+  height: 64px;
 }
 
 .sidebar-logo {

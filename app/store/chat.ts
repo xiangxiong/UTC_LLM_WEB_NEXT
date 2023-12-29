@@ -267,7 +267,6 @@ export const useChatStore = createPersistStore(
       },
 
       async onUserInput(content: string) {
-        debugger;
         const session = get().currentSession();
         const modelConfig = session.mask.modelConfig;
 
